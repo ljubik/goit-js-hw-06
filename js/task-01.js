@@ -1,51 +1,43 @@
-// Завдання 1
-// Задача 3-1
-// CRUD для свойств объекта
-// С - create (создать)
-// R - read (читать)
-// U - update (обновить)
-// D - delete (удалить)
-// Напиши скрипт, который, для объекта user, последовательно:
+// // Завдання 1
+// Задача 6-1
+// map
+// Получи массив имен всех пользователей (свойство name) используя деструктурирующее 
+// присваивание для параметра функции ({name}) без пробелов и переносов на новую строку.
 
-// добавляет поле 'mood' со значением 'happy'
-// добавляет поле 'full time' со значением true
-// заменяет значение 'hobby' на 'skydiving'
-// заменяет значение 'premium' на false
-// в переменную message записывает содержимое объекта user:
-// для переменной keys присваивает массив свойств объекта, используя метод Object.keys()
-// с помощью оператора for...of
-// в формате ключ:значение
-// c переносом строки ('\n')
+// Используй только перебирающие методы массива которые не изменяют (не мутируют) исходный массив. 
+// Т.е. нельзя использовать for, splice, push и т.п. мутирующие методы.
+
+// Деструктурирующее присваивание для параметра функции
+// PS Деструктурирующее присваивание (ДП):
+
+// Объект как параметр без ДП
+// const object = {num : 2}
+// function getNum (obj) { return obj.num; }
+// console.log(getNum(object)) // 2
+// ДП
+// const object = {num : 2}
+// // const num  =  object.num;
+// const { num } = object;
+// console.log(num) // 2
+// Объект как параметр c ДП
+// const object = {num : 2}
+// //function getNum (obj) { return obj.num; }
+// function getNum ({num}) { return num; }
+// console.log(getNum(object)) // 2
 
 // Здано:
-let message = ""
-const user = {
-	age: 20,
-	hobby: "html",
-	name: "Mango",
-	premium: true,
-}
-
-//Write code under this line
-user["mood"] = "happy"
-user["full time"] = true
-user["hobby"] = "skydiving"
-user["premium"] = false
-
-const keys = Object.keys(user)
 // Write code under this line
-for (const [keys, value] of Object.entries(user)) {
-	message = message + `${keys}: ${value}\n`
-	// console.log(message)
-}
+// const getUserNames = array => array.map(function(userName){return userName.name});
+const getUserNames = array => array.map(function({name}){return name});
+ 
+console.log(getUserNames(users));
 
-console.log(message)
-
-/*
-'age : 20 
-hobby : skydiving 
-name : Mango 
-premium : false 
-mood : happy 
-"full time" : true 
-' */
+/* [
+  "Moore Hensley",
+  "Sharlene Bush",
+  "Ross Vazquez",
+  "Elma Head",
+  "Carey Barr",
+  "Blackburn Dotson",
+  "Sheree Anthony",
+] */
