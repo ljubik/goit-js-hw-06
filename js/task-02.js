@@ -27,6 +27,10 @@
 // console.log(getNum(object)) // 2
 
 // Здано:
+// Метод filter возвращает массив с элементами, которые проходят проверку. 
+// У тебя в данном случае не прописано условие. Тебе же не все объекты нужно вернуть, 
+// а только те, у которых eyeColor соответствует заданному color.
+
 // Write code under this line
 // const getUsersWithEyeColor = (array, color) => array;
 const getUsersWithEyeColor = (array, color) => array.filter(({eyeColor}) => eyeColor === color);
